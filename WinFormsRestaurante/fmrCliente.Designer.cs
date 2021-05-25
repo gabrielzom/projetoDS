@@ -105,6 +105,7 @@ namespace WinFormsRestaurante
             this.maskTxBoxNascimentoCliente.Size = new System.Drawing.Size(76, 25);
             this.maskTxBoxNascimentoCliente.TabIndex = 8;
             this.maskTxBoxNascimentoCliente.ValidatingType = typeof(System.DateTime);
+            this.maskTxBoxNascimentoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskTxBoxNascimentoCliente_KeyPress);
             // 
             // lblNascimentoCliente
             // 

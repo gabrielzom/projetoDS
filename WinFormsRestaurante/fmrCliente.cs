@@ -285,5 +285,13 @@ namespace WinFormsRestaurante
 
             }
         }
+
+        private void maskTxBoxNascimentoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (IsInputChar(e.KeyChar))
+            {
+                maskTxBoxNascimentoCliente.Text = "";
+            }
+        }
     }
 }

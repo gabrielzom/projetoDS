@@ -19,9 +19,19 @@ namespace WinFormsRestaurante
             InitializeComponent();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void toolStripCadCliente_Click(object sender, EventArgs e)
         {
+            fmrCliente fmrCliente = new fmrCliente();
+            fmrCliente.Show();
+        }
 
+        private void toolStripSair_Click(object sender, EventArgs e)
+        {
+            DialogResult sair =  MessageBox.Show("Deseja mesmo Sair da Aplicação ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (sair == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

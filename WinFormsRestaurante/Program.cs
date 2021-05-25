@@ -17,7 +17,7 @@ namespace WinFormsRestaurante
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmrCliente());
+            Application.Run(new fmrMenu());
         }
     }
 }

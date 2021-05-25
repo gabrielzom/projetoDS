@@ -106,7 +106,6 @@ namespace WinFormsRestaurante
             this.menuStripMenu.Size = new System.Drawing.Size(926, 24);
             this.menuStripMenu.TabIndex = 0;
             this.menuStripMenu.Text = "menuStripMenu";
-            this.menuStripMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripCad
             // 
@@ -124,6 +123,7 @@ namespace WinFormsRestaurante
             this.toolStripCadCliente.Name = "toolStripCadCliente";
             this.toolStripCadCliente.Size = new System.Drawing.Size(130, 22);
             this.toolStripCadCliente.Text = "Clientes";
+            this.toolStripCadCliente.Click += new System.EventHandler(this.toolStripCadCliente_Click);
             // 
             // toolStripCadUsuario
             // 
@@ -154,6 +154,7 @@ namespace WinFormsRestaurante
             this.toolStripSair.Name = "toolStripSair";
             this.toolStripSair.Size = new System.Drawing.Size(109, 20);
             this.toolStripSair.Text = "Sair da Aplicação";
+            this.toolStripSair.Click += new System.EventHandler(this.toolStripSair_Click);
             // 
             // contentsToolStripMenuItem1
             // 
