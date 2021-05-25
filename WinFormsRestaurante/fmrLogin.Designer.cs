@@ -37,7 +37,9 @@ namespace WinFormsRestaurante
             this.lblPasswoordLogin = new System.Windows.Forms.Label();
             this.btnConfirmLogin = new System.Windows.Forms.Button();
             this.btnExitLogin = new System.Windows.Forms.Button();
+            this.dataGridViewLogin = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPictureLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxPictureLogin
@@ -96,6 +98,7 @@ namespace WinFormsRestaurante
             this.btnConfirmLogin.TabIndex = 5;
             this.btnConfirmLogin.Text = "Entrar";
             this.btnConfirmLogin.UseVisualStyleBackColor = true;
+            this.btnConfirmLogin.Click += new System.EventHandler(this.btnConfirmLogin_Click);
             // 
             // btnExitLogin
             // 
@@ -107,11 +110,22 @@ namespace WinFormsRestaurante
             this.btnExitLogin.Text = "Sair";
             this.btnExitLogin.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewLogin
+            // 
+            this.dataGridViewLogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLogin.Location = new System.Drawing.Point(220, 198);
+            this.dataGridViewLogin.Name = "dataGridViewLogin";
+            this.dataGridViewLogin.RowTemplate.Height = 25;
+            this.dataGridViewLogin.Size = new System.Drawing.Size(23, 29);
+            this.dataGridViewLogin.TabIndex = 7;
+            this.dataGridViewLogin.Visible = false;
+            // 
             // fmrLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 239);
+            this.Controls.Add(this.dataGridViewLogin);
             this.Controls.Add(this.btnExitLogin);
             this.Controls.Add(this.btnConfirmLogin);
             this.Controls.Add(this.lblPasswoordLogin);
@@ -120,8 +134,10 @@ namespace WinFormsRestaurante
             this.Controls.Add(this.txBoxUserLogin);
             this.Controls.Add(this.picBoxPictureLogin);
             this.Name = "fmrLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPictureLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +152,7 @@ namespace WinFormsRestaurante
         private System.Windows.Forms.Label lblPasswoordLogin;
         private System.Windows.Forms.Button btnConfirmLogin;
         private System.Windows.Forms.Button btnExitLogin;
+        private System.Windows.Forms.DataGridView dataGridViewLogin;
     }
 }
 

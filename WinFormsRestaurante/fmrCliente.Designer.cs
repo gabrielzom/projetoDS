@@ -177,6 +177,7 @@ namespace WinFormsRestaurante
             this.Controls.Add(this.dataGridViewCliente);
             this.Controls.Add(this.grBoxCliente);
             this.Name = "fmrCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.fmrCliente_Load);
             this.Click += new System.EventHandler(this.fmrCliente_Click);

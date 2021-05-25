@@ -89,6 +89,10 @@ namespace WinFormsRestaurante
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUsuarioMenu = new System.Windows.Forms.Label();
+            this.lblTipoUsuarioMenu = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsuarioAtual = new System.Windows.Forms.Label();
             this.menuStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -488,11 +492,49 @@ namespace WinFormsRestaurante
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(188, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(506, 482);
+            this.pictureBox1.Size = new System.Drawing.Size(420, 482);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblUsuarioMenu
+            // 
+            this.lblUsuarioMenu.AutoSize = true;
+            this.lblUsuarioMenu.Location = new System.Drawing.Point(12, 482);
+            this.lblUsuarioMenu.Name = "lblUsuarioMenu";
+            this.lblUsuarioMenu.Size = new System.Drawing.Size(50, 15);
+            this.lblUsuarioMenu.TabIndex = 2;
+            this.lblUsuarioMenu.Text = "Usuário:";
+            // 
+            // lblTipoUsuarioMenu
+            // 
+            this.lblTipoUsuarioMenu.AutoSize = true;
+            this.lblTipoUsuarioMenu.Location = new System.Drawing.Point(29, 497);
+            this.lblTipoUsuarioMenu.Name = "lblTipoUsuarioMenu";
+            this.lblTipoUsuarioMenu.Size = new System.Drawing.Size(33, 15);
+            this.lblTipoUsuarioMenu.TabIndex = 3;
+            this.lblTipoUsuarioMenu.Text = "Tipo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(68, 482);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "--";
+            // 
+            // lblUsuarioAtual
+            // 
+            this.lblUsuarioAtual.AutoSize = true;
+            this.lblUsuarioAtual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuarioAtual.Location = new System.Drawing.Point(68, 497);
+            this.lblUsuarioAtual.Name = "lblUsuarioAtual";
+            this.lblUsuarioAtual.Size = new System.Drawing.Size(17, 15);
+            this.lblUsuarioAtual.TabIndex = 5;
+            this.lblUsuarioAtual.Text = "--";
             // 
             // fmrMenu
             // 
@@ -500,9 +542,14 @@ namespace WinFormsRestaurante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(926, 521);
+            this.Controls.Add(this.lblUsuarioAtual);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTipoUsuarioMenu);
+            this.Controls.Add(this.lblUsuarioMenu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStripMenu);
             this.Name = "fmrMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Menu";
             this.menuStripMenu.ResumeLayout(false);
             this.menuStripMenu.PerformLayout();
@@ -573,5 +620,9 @@ namespace WinFormsRestaurante
         private System.Windows.Forms.ToolStripMenuItem toolStripPedidos;
         private System.Windows.Forms.ToolStripMenuItem toolStripSair;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUsuarioMenu;
+        private System.Windows.Forms.Label lblTipoUsuarioMenu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsuarioAtual;
     }
 }
