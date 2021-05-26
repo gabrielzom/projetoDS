@@ -11,5 +11,7 @@ namespace WinFormsRestaurante
         public String Login { get; set; }
 
         public String Senha { get; set; }
+
+        public Int32 Supervisor { get; set; } 
     }
 }

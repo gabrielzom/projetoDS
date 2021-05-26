@@ -56,6 +56,7 @@ namespace WinFormsRestaurante
             // 
             this.txBoxUserLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txBoxUserLogin.Location = new System.Drawing.Point(81, 147);
+            this.txBoxUserLogin.MaxLength = 20;
             this.txBoxUserLogin.Name = "txBoxUserLogin";
             this.txBoxUserLogin.Size = new System.Drawing.Size(118, 25);
             this.txBoxUserLogin.TabIndex = 1;
@@ -64,6 +65,7 @@ namespace WinFormsRestaurante
             // 
             this.txBoxUserPassword.Font = new System.Drawing.Font("Wingdings", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txBoxUserPassword.Location = new System.Drawing.Point(81, 176);
+            this.txBoxUserPassword.MaxLength = 10;
             this.txBoxUserPassword.Name = "txBoxUserPassword";
             this.txBoxUserPassword.PasswordChar = 'l';
             this.txBoxUserPassword.Size = new System.Drawing.Size(118, 22);

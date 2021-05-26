@@ -492,7 +492,7 @@ namespace WinFormsRestaurante
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(214, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(420, 482);
             this.pictureBox1.TabIndex = 1;
@@ -541,7 +541,7 @@ namespace WinFormsRestaurante
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(926, 521);
+            this.ClientSize = new System.Drawing.Size(900, 521);
             this.Controls.Add(this.lblUsuarioAtual);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTipoUsuarioMenu);
