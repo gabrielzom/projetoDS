@@ -85,5 +85,16 @@ namespace WinFormsRestaurante
                 txBoxUserLogin.Focus();
             }
         }
+
+        private void btnExitLogin_Click(object sender, EventArgs e)
+        {
+            DialogResult sair = MessageBox.Show("Deseja mesmo sair da aplicação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (sair == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

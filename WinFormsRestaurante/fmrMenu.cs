@@ -53,9 +53,14 @@ namespace WinFormsRestaurante
 
         private void toolStripLogoff_Click(object sender, EventArgs e)
         {
-            this.Close();
-            fmrLogin fmrLogin = new fmrLogin();
-            fmrLogin.Visible = true;
+            DialogResult sair = MessageBox.Show("Deseja mesmo fazer Logoff ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (sair == DialogResult.Yes)
+            {
+                this.Close();
+                fmrLogin fmrLogin = new fmrLogin();
+                fmrLogin.Visible = true;
+            }
         }
     }
 }

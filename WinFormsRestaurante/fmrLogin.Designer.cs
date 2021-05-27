@@ -111,6 +111,7 @@ namespace WinFormsRestaurante
             this.btnExitLogin.TabIndex = 6;
             this.btnExitLogin.Text = "Sair";
             this.btnExitLogin.UseVisualStyleBackColor = true;
+            this.btnExitLogin.Click += new System.EventHandler(this.btnExitLogin_Click);
             // 
             // dataGridViewLogin
             // 
