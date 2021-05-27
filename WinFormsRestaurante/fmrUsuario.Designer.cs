@@ -50,7 +50,7 @@ namespace WinFormsRestaurante
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(141, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,7 +60,7 @@ namespace WinFormsRestaurante
             // lblUsuarioCad
             // 
             this.lblUsuarioCad.AutoSize = true;
-            this.lblUsuarioCad.Location = new System.Drawing.Point(21, 118);
+            this.lblUsuarioCad.Location = new System.Drawing.Point(40, 121);
             this.lblUsuarioCad.Name = "lblUsuarioCad";
             this.lblUsuarioCad.Size = new System.Drawing.Size(78, 15);
             this.lblUsuarioCad.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace WinFormsRestaurante
             // lblSenhaCad
             // 
             this.lblSenhaCad.AutoSize = true;
-            this.lblSenhaCad.Location = new System.Drawing.Point(30, 145);
+            this.lblSenhaCad.Location = new System.Drawing.Point(49, 148);
             this.lblSenhaCad.Name = "lblSenhaCad";
             this.lblSenhaCad.Size = new System.Drawing.Size(69, 15);
             this.lblSenhaCad.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace WinFormsRestaurante
             // lblConfSenhaCad
             // 
             this.lblConfSenhaCad.AutoSize = true;
-            this.lblConfSenhaCad.Location = new System.Drawing.Point(32, 174);
+            this.lblConfSenhaCad.Location = new System.Drawing.Point(51, 177);
             this.lblConfSenhaCad.Name = "lblConfSenhaCad";
             this.lblConfSenhaCad.Size = new System.Drawing.Size(67, 15);
             this.lblConfSenhaCad.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace WinFormsRestaurante
             // lblSupervisorCad
             // 
             this.lblSupervisorCad.AutoSize = true;
-            this.lblSupervisorCad.Location = new System.Drawing.Point(21, 211);
+            this.lblSupervisorCad.Location = new System.Drawing.Point(40, 214);
             this.lblSupervisorCad.Name = "lblSupervisorCad";
             this.lblSupervisorCad.Size = new System.Drawing.Size(78, 15);
             this.lblSupervisorCad.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace WinFormsRestaurante
             // 
             // txBoxUsuario
             // 
-            this.txBoxUsuario.Location = new System.Drawing.Point(103, 115);
+            this.txBoxUsuario.Location = new System.Drawing.Point(122, 118);
             this.txBoxUsuario.MaxLength = 20;
             this.txBoxUsuario.Name = "txBoxUsuario";
             this.txBoxUsuario.Size = new System.Drawing.Size(100, 23);
@@ -104,7 +104,7 @@ namespace WinFormsRestaurante
             // txBoxSenha
             // 
             this.txBoxSenha.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txBoxSenha.Location = new System.Drawing.Point(103, 142);
+            this.txBoxSenha.Location = new System.Drawing.Point(122, 145);
             this.txBoxSenha.MaxLength = 10;
             this.txBoxSenha.Name = "txBoxSenha";
             this.txBoxSenha.PasswordChar = 'l';
@@ -114,7 +114,7 @@ namespace WinFormsRestaurante
             // txBoxConfSenha
             // 
             this.txBoxConfSenha.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txBoxConfSenha.Location = new System.Drawing.Point(103, 171);
+            this.txBoxConfSenha.Location = new System.Drawing.Point(122, 174);
             this.txBoxConfSenha.MaxLength = 10;
             this.txBoxConfSenha.Name = "txBoxConfSenha";
             this.txBoxConfSenha.PasswordChar = 'l';
@@ -124,7 +124,7 @@ namespace WinFormsRestaurante
             // rdBtnSimUsuario
             // 
             this.rdBtnSimUsuario.AutoSize = true;
-            this.rdBtnSimUsuario.Location = new System.Drawing.Point(103, 209);
+            this.rdBtnSimUsuario.Location = new System.Drawing.Point(122, 212);
             this.rdBtnSimUsuario.Name = "rdBtnSimUsuario";
             this.rdBtnSimUsuario.Size = new System.Drawing.Size(45, 19);
             this.rdBtnSimUsuario.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace WinFormsRestaurante
             // rdBtnNaoUsuario
             // 
             this.rdBtnNaoUsuario.AutoSize = true;
-            this.rdBtnNaoUsuario.Location = new System.Drawing.Point(156, 209);
+            this.rdBtnNaoUsuario.Location = new System.Drawing.Point(175, 212);
             this.rdBtnNaoUsuario.Name = "rdBtnNaoUsuario";
             this.rdBtnNaoUsuario.Size = new System.Drawing.Size(47, 19);
             this.rdBtnNaoUsuario.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace WinFormsRestaurante
             // 
             // btnCadastrarUsuario
             // 
-            this.btnCadastrarUsuario.Location = new System.Drawing.Point(47, 249);
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(66, 252);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrarUsuario.TabIndex = 10;
@@ -156,7 +156,7 @@ namespace WinFormsRestaurante
             // dataGridViewUsuario
             // 
             this.dataGridViewUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuario.Location = new System.Drawing.Point(128, 234);
+            this.dataGridViewUsuario.Location = new System.Drawing.Point(147, 237);
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
             this.dataGridViewUsuario.RowTemplate.Height = 25;
             this.dataGridViewUsuario.Size = new System.Drawing.Size(10, 10);
@@ -165,7 +165,7 @@ namespace WinFormsRestaurante
             // 
             // btnLimparUsuario
             // 
-            this.btnLimparUsuario.Location = new System.Drawing.Point(128, 249);
+            this.btnLimparUsuario.Location = new System.Drawing.Point(147, 252);
             this.btnLimparUsuario.Name = "btnLimparUsuario";
             this.btnLimparUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnLimparUsuario.TabIndex = 11;
@@ -177,7 +177,7 @@ namespace WinFormsRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 284);
+            this.ClientSize = new System.Drawing.Size(313, 284);
             this.Controls.Add(this.dataGridViewUsuario);
             this.Controls.Add(this.btnLimparUsuario);
             this.Controls.Add(this.btnCadastrarUsuario);

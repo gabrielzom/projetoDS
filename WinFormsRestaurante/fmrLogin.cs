@@ -13,7 +13,7 @@ using WinFormsRestaurante.Properties;
 namespace WinFormsRestaurante
 {
     public partial class fmrLogin : Form
-    {
+    {  
         public fmrLogin()
         {
             InitializeComponent();
@@ -52,16 +52,37 @@ namespace WinFormsRestaurante
             dataGridViewLogin.DataSource = dataTable;
 
             if (dataGridViewLogin.Rows.Count == 2)
-            {
-                fmrMenu fmrMenu = new fmrMenu();
+            { 
+                
+
+                Int32 supervisor = (Int32) dataGridViewLogin.Rows[0].Cells[3].Value;
+                
+                this.Visible = false;
+                txBoxUserLogin.Text = "";
+                txBoxUserPassword.Text = "";
+                txBoxUserLogin.Focus();
+
+                if (supervisor == 1)
+                {
+                    usuario.Tipo = "Supervisor";
+                }
+
+                else
+                {
+                    usuario.Tipo = "Operador";
+                }
+
+                fmrMenu fmrMenu = new fmrMenu(usuario.Login, usuario.Tipo);
                 fmrMenu.Show();
             }
+
 
             else
             {
                 MessageBox.Show("Usuário e/ou senha incorretos");
                 txBoxUserLogin.Text = "";
                 txBoxUserPassword.Text = "";
+                txBoxUserLogin.Focus();
             }
         }
     }

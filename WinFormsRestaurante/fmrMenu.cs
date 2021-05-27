@@ -14,9 +14,12 @@ namespace WinFormsRestaurante
 {
     public partial class fmrMenu : Form
     {
-        public fmrMenu()
+        
+        public fmrMenu(String usuarioAtual, String tipoAtual)
         {
             InitializeComponent();
+            lblUsuarioAtual.Text = usuarioAtual;
+            lblTipoAtual.Text = tipoAtual;
         }
 
         private void toolStripCadCliente_Click(object sender, EventArgs e)
@@ -32,6 +35,27 @@ namespace WinFormsRestaurante
             {
                 Application.Exit();
             }
+        }
+
+        private void toolStripCadUsuario_Click(object sender, EventArgs e)
+        {
+            if (lblTipoAtual.Text == "Operador")
+            {
+                MessageBox.Show("Apenas SUPERVISORES podem realizar cadastro de usuários.");
+            }
+            
+            else
+            {
+                fmrUsuario fmrUsuario = new fmrUsuario();
+                fmrUsuario.Show();
+            }
+        }
+
+        private void toolStripLogoff_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            fmrLogin fmrLogin = new fmrLogin();
+            fmrLogin.Visible = true;
         }
     }
 }

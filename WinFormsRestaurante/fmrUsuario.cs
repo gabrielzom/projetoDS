@@ -41,6 +41,7 @@ namespace WinFormsRestaurante
         private void btnCadastrarUsuario_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
+            usuario.Login = txBoxUsuario.Text;
             SqlConnection sqlConnection = new SqlConnection();
             SqlCommand sqlCommand = new SqlCommand();
             DataTable dataTable = new DataTable();
@@ -57,8 +58,6 @@ namespace WinFormsRestaurante
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);
             dataGridViewUsuario.DataSource = dataTable;
-
-            usuario.Login = txBoxUsuario.Text;
             usuario.Senha = txBoxSenha.Text;
                 
             if ((String.IsNullOrWhiteSpace(txBoxUsuario.Text)) || (String.IsNullOrWhiteSpace(txBoxSenha.Text)) || (String.IsNullOrWhiteSpace(txBoxConfSenha.Text)))
@@ -84,18 +83,18 @@ namespace WinFormsRestaurante
                 
             }
 
-            else if(rdBtnSimUsuario.Checked)
-            {
-                usuario.Supervisor = 1;
-            }
-
-            else if (rdBtnNaoUsuario.Checked)
-            {
-                usuario.Supervisor = 0;
-            }
-
             else
             {
+                if (rdBtnSimUsuario.Checked)
+                {
+                    usuario.Supervisor = 1;
+                }
+
+                else
+                {
+                    usuario.Supervisor = 0;
+                }
+
                 usuario.Login = txBoxUsuario.Text;
                 usuario.Senha = txBoxSenha.Text;
 
@@ -104,6 +103,10 @@ namespace WinFormsRestaurante
                 {
                     this.CadUsuario(usuario);
                     MessageBox.Show("Usuario cadastrado com sucesso !");
+                    txBoxSenha.Text = "";
+                    txBoxConfSenha.Text = "";
+                    txBoxUsuario.Text = "";
+                    txBoxUsuario.Focus();
                 }
 
                 else
