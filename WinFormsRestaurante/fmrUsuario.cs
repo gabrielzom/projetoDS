@@ -20,6 +20,68 @@ namespace WinFormsRestaurante
             InitializeComponent();
         }
 
+        public DataTable Carregar()
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            DataTable dataTable = new DataTable();
+
+            sqlConnection.ConnectionString = Settings.Default.connectionString;
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS";
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dataTable);
+
+
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            dataGridViewUsuario.DataSource = dataTable;
+
+            return dataTable;
+        }
+
+        public DataTable Atualizar()
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+            DataTable dataTable = new DataTable();
+
+            sqlConnection.ConnectionString = Settings.Default.connectionString;
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS";
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            sqlDataAdapter.Fill(dataTable);
+
+
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            dataGridViewUsuario.DataSource = dataTable;
+            return dataTable;
+        }
+        public void Excluir(Usuario usuario)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlConnection.ConnectionString = Settings.Default.connectionString;
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "uspUsuariosExcluir";
+            sqlCommand.Parameters.AddWithValue("@usuarioId", usuario.Id);
+
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
         public void CadUsuario(Usuario usuario)
         {
             SqlConnection sqlConnection = new SqlConnection();
@@ -49,7 +111,7 @@ namespace WinFormsRestaurante
             sqlConnection.ConnectionString = Settings.Default.connectionString;
             sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "SELECT * FROM USUARIOS WHERE USUARIO = '"+ usuario.Login +"' ";
+            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS WHERE USUARIO = '"+ usuario.Login +"' ";
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
@@ -71,6 +133,7 @@ namespace WinFormsRestaurante
                 MessageBox.Show("Este nome de usuário já está em uso, tente outro.");
                 txBoxUsuario.Text = "";
                 txBoxUsuario.Focus();
+                this.Carregar();
             }
 
             else if (txBoxSenha.Text != txBoxConfSenha.Text)
@@ -103,10 +166,13 @@ namespace WinFormsRestaurante
                 {
                     this.CadUsuario(usuario);
                     MessageBox.Show("Usuario cadastrado com sucesso !");
+
+
                     txBoxSenha.Text = "";
                     txBoxConfSenha.Text = "";
                     txBoxUsuario.Text = "";
                     txBoxUsuario.Focus();
+                    this.Atualizar();
                 }
 
                 else
@@ -125,6 +191,28 @@ namespace WinFormsRestaurante
             txBoxConfSenha.Text = "";
             txBoxUsuario.Text = "";
             txBoxUsuario.Focus();
+        }
+
+        private void btnExcluirUsuario_Click(object sender, EventArgs e)
+        {
+            DialogResult excluir = MessageBox.Show("Deseja realmente excluir o usuario selecionado ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (excluir == DialogResult.Yes)
+            {
+                Usuario usuario = new Usuario();
+                usuario.Id = (Int32)dataGridViewUsuario.CurrentRow.Cells[0].Value;
+                this.Excluir(usuario);
+                MessageBox.Show("Usuario excluído com sucesso !");
+                txBoxUsuario.Text = " ";
+                txBoxUsuario.Text = "";
+                txBoxUsuario.Focus();
+                this.Atualizar();
+            }
+        }
+
+        private void fmrUsuario_Load(object sender, EventArgs e)
+        {
+            this.Carregar();
         }
     }
 }

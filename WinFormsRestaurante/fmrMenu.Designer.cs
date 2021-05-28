@@ -37,6 +37,7 @@ namespace WinFormsRestaurante
             this.toolStripCadProduto = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripCadCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripPedidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripLogoff = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSair = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@ namespace WinFormsRestaurante
             this.lblTipoUsuarioMenu = new System.Windows.Forms.Label();
             this.lblTipoAtual = new System.Windows.Forms.Label();
             this.lblUsuarioAtual = new System.Windows.Forms.Label();
-            this.toolStripLogoff = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -155,6 +155,13 @@ namespace WinFormsRestaurante
             this.toolStripPedidos.Name = "toolStripPedidos";
             this.toolStripPedidos.Size = new System.Drawing.Size(61, 20);
             this.toolStripPedidos.Text = "Pedidos";
+            // 
+            // toolStripLogoff
+            // 
+            this.toolStripLogoff.Name = "toolStripLogoff";
+            this.toolStripLogoff.Size = new System.Drawing.Size(54, 20);
+            this.toolStripLogoff.Text = "Logoff";
+            this.toolStripLogoff.Click += new System.EventHandler(this.toolStripLogoff_Click);
             // 
             // toolStripSair
             // 
@@ -539,19 +546,13 @@ namespace WinFormsRestaurante
             this.lblUsuarioAtual.TabIndex = 5;
             this.lblUsuarioAtual.Text = "--";
             // 
-            // toolStripLogoff
-            // 
-            this.toolStripLogoff.Name = "toolStripLogoff";
-            this.toolStripLogoff.Size = new System.Drawing.Size(54, 20);
-            this.toolStripLogoff.Text = "Logoff";
-            this.toolStripLogoff.Click += new System.EventHandler(this.toolStripLogoff_Click);
-            // 
             // fmrMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(900, 521);
+            this.ControlBox = false;
             this.Controls.Add(this.lblUsuarioAtual);
             this.Controls.Add(this.lblTipoAtual);
             this.Controls.Add(this.lblTipoUsuarioMenu);

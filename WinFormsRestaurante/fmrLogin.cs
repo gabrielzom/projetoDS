@@ -53,8 +53,6 @@ namespace WinFormsRestaurante
 
             if (dataGridViewLogin.Rows.Count == 2)
             { 
-                
-
                 Int32 supervisor = (Int32) dataGridViewLogin.Rows[0].Cells[3].Value;
                 
                 this.Visible = false;
@@ -76,7 +74,6 @@ namespace WinFormsRestaurante
                 fmrMenu.Show();
             }
 
-
             else
             {
                 MessageBox.Show("Usuário e/ou senha incorretos");
@@ -89,7 +86,6 @@ namespace WinFormsRestaurante
         private void btnExitLogin_Click(object sender, EventArgs e)
         {
             DialogResult sair = MessageBox.Show("Deseja mesmo sair da aplicação ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
 
             if (sair == DialogResult.Yes)
             {
