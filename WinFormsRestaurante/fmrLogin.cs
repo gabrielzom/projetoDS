@@ -19,13 +19,21 @@ namespace WinFormsRestaurante
             InitializeComponent();
         }
 
+        public void LimparCampos()
+        {
+            txBoxUserLogin.Text = "";
+            txBoxUserPassword.Text = "";
+            txBoxUserLogin.Focus();
+        }
+
         public DataTable Login(Usuario usuario)
         {
-            SqlConnection sqlConnection = new SqlConnection();
-            SqlCommand sqlCommand = new SqlCommand();
             DataTable dataTable = new DataTable();
-
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection sqlConnection = new SqlConnection();
+            
             sqlConnection.ConnectionString = Settings.Default.connectionString;
+
             sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "uspUsuariosAutenticar";
@@ -42,24 +50,43 @@ namespace WinFormsRestaurante
             return dataTable;
         }
 
+        SqlDataReader VerificarTipoUsuario(Usuario usuario)
+        {
+            SqlDataReader sqlDataReader;
+            SqlConnection sqlConnection = new SqlConnection();
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlConnection.ConnectionString = Settings.Default.connectionString;
+
+            sqlCommand.Connection = sqlConnection;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "uspUsuariosAutenticar";
+            sqlCommand.Parameters.AddWithValue("@usuario", usuario.Login);
+            sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
+
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlDataReader = sqlCommand.ExecuteReader();
+
+            return sqlDataReader;
+        }
+
         private void btnConfirmLogin_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
             usuario.Login = txBoxUserLogin.Text;
             usuario.Senha = txBoxUserPassword.Text;
 
-            DataTable dataTable = this.Login(usuario);
-            dataGridViewLogin.DataSource = dataTable;
+            DataTable dataTable = Login(usuario);
+            SqlDataReader sqlDataReader = VerificarTipoUsuario(usuario);
+            sqlDataReader.Read();
 
-            if (dataGridViewLogin.Rows.Count == 2)
-            { 
-                Int32 supervisor = (Int32) dataGridViewLogin.Rows[0].Cells[3].Value;
-                
+            if (dataTable.Rows.Count == 1)
+            {
                 this.Visible = false;
-                txBoxUserLogin.Text = "";
-                txBoxUserPassword.Text = "";
-                txBoxUserLogin.Focus();
-
+                LimparCampos();
+                
+                Int32 supervisor = sqlDataReader.GetInt32(3);
                 if (supervisor == 1)
                 {
                     usuario.Tipo = "Supervisor";
@@ -77,9 +104,7 @@ namespace WinFormsRestaurante
             else
             {
                 MessageBox.Show("Usuário e/ou senha incorretos");
-                txBoxUserLogin.Text = "";
-                txBoxUserPassword.Text = "";
-                txBoxUserLogin.Focus();
+                LimparCampos();
             }
         }
 

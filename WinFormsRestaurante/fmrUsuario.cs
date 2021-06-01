@@ -20,6 +20,28 @@ namespace WinFormsRestaurante
             InitializeComponent();
         }
 
+        public void LimparCampos()
+        {
+            txBoxSenha.Text = "";
+            txBoxConfSenha.Text = "";
+            txBoxUsuario.Text = "";
+            txBoxUsuario.Focus();
+        }
+
+        public void LimparSenhas()
+        {
+            txBoxSenha.Text = "";
+            txBoxConfSenha.Text = "";
+            txBoxSenha.Focus();
+        }
+
+        public void LimparUsuario()
+        {
+            txBoxUsuario.Text = "";
+            txBoxUsuario.Focus();
+            this.Carregar();
+        }
+
         public DataTable Carregar()
         {
             SqlConnection sqlConnection = new SqlConnection();
@@ -34,7 +56,6 @@ namespace WinFormsRestaurante
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);
 
-
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
@@ -44,7 +65,7 @@ namespace WinFormsRestaurante
             return dataTable;
         }
 
-        public DataTable Atualizar()
+        public DataTable AtualizarDados()
         {
             SqlConnection sqlConnection = new SqlConnection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -121,29 +142,26 @@ namespace WinFormsRestaurante
             sqlDataAdapter.Fill(dataTable);
             dataGridViewUsuario.DataSource = dataTable;
             usuario.Senha = txBoxSenha.Text;
+
+
+
                 
             if ((String.IsNullOrWhiteSpace(txBoxUsuario.Text)) || (String.IsNullOrWhiteSpace(txBoxSenha.Text)) || (String.IsNullOrWhiteSpace(txBoxConfSenha.Text)))
             {
                 MessageBox.Show("Para Cadastrar, TODOS CAMPOS devem ser preenchidos. Tente novamente.");
-                txBoxUsuario.Focus();
+                LimparCampos();
             }
 
             else if (dataGridViewUsuario.Rows.Count == 2)
             {
                 MessageBox.Show("Este nome de usuário já está em uso, tente outro.");
-                txBoxUsuario.Text = "";
-                txBoxUsuario.Focus();
-                this.Carregar();
+                LimparUsuario();
             }
 
             else if (txBoxSenha.Text != txBoxConfSenha.Text)
             {
                 MessageBox.Show("As senhas devem conferir. Tente novamente.");
-                txBoxSenha.Text = ""; 
-                txBoxConfSenha.Text = "";
-                txBoxSenha.Focus();
-
-                
+                LimparSenhas();    
             }
 
             else
@@ -164,33 +182,22 @@ namespace WinFormsRestaurante
                 DialogResult cadastro = MessageBox.Show("Confirma a inclusão do usuário " + txBoxUsuario.Text + " ?","Alerta",MessageBoxButtons.YesNo);
                 if (cadastro == DialogResult.Yes)
                 {
-                    this.CadUsuario(usuario);
+                    CadUsuario(usuario);
                     MessageBox.Show("Usuario cadastrado com sucesso !");
-
-
-                    txBoxSenha.Text = "";
-                    txBoxConfSenha.Text = "";
-                    txBoxUsuario.Text = "";
-                    txBoxUsuario.Focus();
-                    this.Atualizar();
+                    LimparCampos();
+                    AtualizarDados();
                 }
 
                 else
                 {
-                    txBoxSenha.Text = "";
-                    txBoxConfSenha.Text = "";
-                    txBoxUsuario.Text = "";
-                    txBoxUsuario.Focus();
+                    LimparCampos();
                 }
             }
         }
 
         private void btnLimparUsuario_Click(object sender, EventArgs e)
         {
-            txBoxSenha.Text = "";
-            txBoxConfSenha.Text = "";
-            txBoxUsuario.Text = "";
-            txBoxUsuario.Focus();
+            LimparCampos();
         }
 
         private void btnExcluirUsuario_Click(object sender, EventArgs e)
@@ -201,18 +208,16 @@ namespace WinFormsRestaurante
             {
                 Usuario usuario = new Usuario();
                 usuario.Id = (Int32)dataGridViewUsuario.CurrentRow.Cells[0].Value;
-                this.Excluir(usuario);
+                Excluir(usuario);
                 MessageBox.Show("Usuario excluído com sucesso !");
-                txBoxUsuario.Text = " ";
-                txBoxUsuario.Text = "";
-                txBoxUsuario.Focus();
-                this.Atualizar();
+                LimparCampos();
+                AtualizarDados();
             }
         }
 
         private void fmrUsuario_Load(object sender, EventArgs e)
         {
-            this.Carregar();
+            Carregar();
         }
     }
 }

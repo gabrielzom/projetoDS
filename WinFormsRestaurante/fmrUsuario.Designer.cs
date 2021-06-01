@@ -71,7 +71,7 @@ namespace WinFormsRestaurante
             // lblSenhaCad
             // 
             this.lblSenhaCad.AutoSize = true;
-            this.lblSenhaCad.Location = new System.Drawing.Point(20, 183);
+            this.lblSenhaCad.Location = new System.Drawing.Point(9, 183);
             this.lblSenhaCad.Name = "lblSenhaCad";
             this.lblSenhaCad.Size = new System.Drawing.Size(69, 15);
             this.lblSenhaCad.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace WinFormsRestaurante
             // lblConfSenhaCad
             // 
             this.lblConfSenhaCad.AutoSize = true;
-            this.lblConfSenhaCad.Location = new System.Drawing.Point(22, 210);
+            this.lblConfSenhaCad.Location = new System.Drawing.Point(9, 209);
             this.lblConfSenhaCad.Name = "lblConfSenhaCad";
             this.lblConfSenhaCad.Size = new System.Drawing.Size(67, 15);
             this.lblConfSenhaCad.TabIndex = 3;

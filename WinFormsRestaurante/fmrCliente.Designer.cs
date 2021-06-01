@@ -59,7 +59,7 @@ namespace WinFormsRestaurante
             this.grBoxCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.grBoxCliente.Location = new System.Drawing.Point(297, 190);
             this.grBoxCliente.Name = "grBoxCliente";
-            this.grBoxCliente.Size = new System.Drawing.Size(365, 140);
+            this.grBoxCliente.Size = new System.Drawing.Size(480, 116);
             this.grBoxCliente.TabIndex = 0;
             this.grBoxCliente.TabStop = false;
             this.grBoxCliente.Text = "Cliente";
@@ -67,7 +67,7 @@ namespace WinFormsRestaurante
             // btnExcluirCliente
             // 
             this.btnExcluirCliente.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluirCliente.Location = new System.Drawing.Point(220, 100);
+            this.btnExcluirCliente.Location = new System.Drawing.Point(300, 69);
             this.btnExcluirCliente.Name = "btnExcluirCliente";
             this.btnExcluirCliente.Size = new System.Drawing.Size(75, 29);
             this.btnExcluirCliente.TabIndex = 11;
@@ -78,7 +78,7 @@ namespace WinFormsRestaurante
             // btnAlterarCliente
             // 
             this.btnAlterarCliente.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAlterarCliente.Location = new System.Drawing.Point(120, 100);
+            this.btnAlterarCliente.Location = new System.Drawing.Point(200, 69);
             this.btnAlterarCliente.Name = "btnAlterarCliente";
             this.btnAlterarCliente.Size = new System.Drawing.Size(75, 29);
             this.btnAlterarCliente.TabIndex = 10;
@@ -89,7 +89,7 @@ namespace WinFormsRestaurante
             // btnIncluirCliente
             // 
             this.btnIncluirCliente.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIncluirCliente.Location = new System.Drawing.Point(16, 100);
+            this.btnIncluirCliente.Location = new System.Drawing.Point(96, 69);
             this.btnIncluirCliente.Name = "btnIncluirCliente";
             this.btnIncluirCliente.Size = new System.Drawing.Size(75, 29);
             this.btnIncluirCliente.TabIndex = 9;
@@ -101,7 +101,7 @@ namespace WinFormsRestaurante
             // 
             this.maskTxBoxNascimentoCliente.Enabled = false;
             this.maskTxBoxNascimentoCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maskTxBoxNascimentoCliente.Location = new System.Drawing.Point(99, 58);
+            this.maskTxBoxNascimentoCliente.Location = new System.Drawing.Point(398, 24);
             this.maskTxBoxNascimentoCliente.Mask = "00/00/0000";
             this.maskTxBoxNascimentoCliente.Name = "maskTxBoxNascimentoCliente";
             this.maskTxBoxNascimentoCliente.PromptChar = ' ';
@@ -113,7 +113,7 @@ namespace WinFormsRestaurante
             // lblNascimentoCliente
             // 
             this.lblNascimentoCliente.AutoSize = true;
-            this.lblNascimentoCliente.Location = new System.Drawing.Point(16, 61);
+            this.lblNascimentoCliente.Location = new System.Drawing.Point(315, 27);
             this.lblNascimentoCliente.Name = "lblNascimentoCliente";
             this.lblNascimentoCliente.Size = new System.Drawing.Size(81, 17);
             this.lblNascimentoCliente.TabIndex = 7;
@@ -144,7 +144,7 @@ namespace WinFormsRestaurante
             this.dataGridViewCliente.Location = new System.Drawing.Point(297, 52);
             this.dataGridViewCliente.Name = "dataGridViewCliente";
             this.dataGridViewCliente.RowTemplate.Height = 25;
-            this.dataGridViewCliente.Size = new System.Drawing.Size(365, 132);
+            this.dataGridViewCliente.Size = new System.Drawing.Size(480, 132);
             this.dataGridViewCliente.TabIndex = 1;
             this.dataGridViewCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCliente_CellClick);
             // 
@@ -154,7 +154,7 @@ namespace WinFormsRestaurante
             this.txBoxPesquisarCliente.ForeColor = System.Drawing.Color.Silver;
             this.txBoxPesquisarCliente.Location = new System.Drawing.Point(412, 21);
             this.txBoxPesquisarCliente.Name = "txBoxPesquisarCliente";
-            this.txBoxPesquisarCliente.Size = new System.Drawing.Size(250, 25);
+            this.txBoxPesquisarCliente.Size = new System.Drawing.Size(170, 25);
             this.txBoxPesquisarCliente.TabIndex = 2;
             this.txBoxPesquisarCliente.Text = "Buscar...";
             this.txBoxPesquisarCliente.Click += new System.EventHandler(this.txBoxPesquisarCliente_Click);
@@ -173,9 +173,9 @@ namespace WinFormsRestaurante
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 267);
+            this.pictureBox1.Size = new System.Drawing.Size(270, 285);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -184,7 +184,7 @@ namespace WinFormsRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 338);
+            this.ClientSize = new System.Drawing.Size(796, 323);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPesquisarCliente);
             this.Controls.Add(this.txBoxPesquisarCliente);
