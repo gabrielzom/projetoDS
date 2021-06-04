@@ -12,10 +12,10 @@ using WinFormsRestaurante.Properties;
 
 namespace WinFormsRestaurante
 {
-    public partial class fmrMenu : Form
+    public partial class FmrMenu : Form
     {
         
-        public fmrMenu(String usuarioAtual, String tipoAtual)
+        public FmrMenu(String usuarioAtual, String tipoAtual)
         {
             InitializeComponent();
             lblUsuarioAtual.Text = usuarioAtual;
@@ -24,7 +24,8 @@ namespace WinFormsRestaurante
 
         private void toolStripCadCliente_Click(object sender, EventArgs e)
         {
-            fmrCliente fmrCliente = new fmrCliente();
+            FmrCliente fmrCliente = new FmrCliente();
+            fmrCliente.MdiParent = this;
             fmrCliente.Show();
         }
 
@@ -46,19 +47,20 @@ namespace WinFormsRestaurante
             
             else
             {
-                fmrUsuario fmrUsuario = new fmrUsuario();
+                FmrUsuario fmrUsuario = new FmrUsuario();
+                fmrUsuario.MdiParent = this;
                 fmrUsuario.Show();
             }
         }
 
         private void toolStripLogoff_Click(object sender, EventArgs e)
         {
+            FmrLogin fmrLogin = new FmrLogin();
+            
             DialogResult sair = MessageBox.Show("Deseja mesmo fazer Logoff ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (sair == DialogResult.Yes)
             {
                 this.Close();
-                fmrLogin fmrLogin = new fmrLogin();
                 fmrLogin.Visible = true;
             }
         }

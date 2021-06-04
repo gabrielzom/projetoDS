@@ -12,20 +12,18 @@ using WinFormsRestaurante.Properties;
 
 namespace WinFormsRestaurante
 {
-    public partial class fmrLogin : Form
+    public partial class FmrLogin : Form
     {  
-        public fmrLogin()
+        public FmrLogin()
         {
             InitializeComponent();
         }
-
         public void LimparCampos()
         {
             txBoxUserLogin.Text = "";
             txBoxUserPassword.Text = "";
             txBoxUserLogin.Focus();
         }
-
         public DataTable Login(Usuario usuario)
         {
             DataTable dataTable = new DataTable();
@@ -49,7 +47,6 @@ namespace WinFormsRestaurante
 
             return dataTable;
         }
-
         SqlDataReader VerificarTipoUsuario(Usuario usuario)
         {
             SqlDataReader sqlDataReader;
@@ -85,8 +82,8 @@ namespace WinFormsRestaurante
             {
                 this.Visible = false;
                 LimparCampos();
-                
                 Int32 supervisor = sqlDataReader.GetInt32(3);
+
                 if (supervisor == 1)
                 {
                     usuario.Tipo = "Supervisor";
@@ -97,7 +94,7 @@ namespace WinFormsRestaurante
                     usuario.Tipo = "Operador";
                 }
 
-                fmrMenu fmrMenu = new fmrMenu(usuario.Login, usuario.Tipo);
+                FmrMenu fmrMenu = new FmrMenu(usuario.Login, usuario.Tipo);
                 fmrMenu.Show();
             }
 

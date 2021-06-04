@@ -13,9 +13,9 @@ using System.Data.SqlClient;
 
 namespace WinFormsRestaurante
 {
-    public partial class fmrUsuario : Form
+    public partial class FmrUsuario : Form
     {
-        public fmrUsuario()
+        public FmrUsuario()
         {
             InitializeComponent();
         }
@@ -79,12 +79,10 @@ namespace WinFormsRestaurante
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);
 
-
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
 
-            dataGridViewUsuario.DataSource = dataTable;
             return dataTable;
         }
         public void Excluir(Usuario usuario)
@@ -103,7 +101,7 @@ namespace WinFormsRestaurante
             sqlConnection.Close();
         }
 
-        public void CadUsuario(Usuario usuario)
+        public void Cadastrar(Usuario usuario)
         {
             SqlConnection sqlConnection = new SqlConnection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -121,9 +119,8 @@ namespace WinFormsRestaurante
             sqlConnection.Close();
         }
 
-        private void btnCadastrarUsuario_Click(object sender, EventArgs e)
+        public DataTable Consultar(Usuario usuario)
         {
-            Usuario usuario = new Usuario();
             usuario.Login = txBoxUsuario.Text;
             SqlConnection sqlConnection = new SqlConnection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -132,7 +129,7 @@ namespace WinFormsRestaurante
             sqlConnection.ConnectionString = Settings.Default.connectionString;
             sqlCommand.Connection = sqlConnection;
             sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS WHERE USUARIO = '"+ usuario.Login +"' ";
+            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS WHERE USUARIO = '" + usuario.Login + "' ";
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
@@ -140,19 +137,33 @@ namespace WinFormsRestaurante
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
             sqlDataAdapter.Fill(dataTable);
-            dataGridViewUsuario.DataSource = dataTable;
+
+            return dataTable;
+        }
+
+        private void fmrUsuario_Load(object sender, EventArgs e)
+        {
+            Carregar();
+        }
+        private void btnLimparUsuario_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void btnCadastrarUsuario_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            DataTable dataTable = Consultar(usuario);
             usuario.Senha = txBoxSenha.Text;
 
 
-
-                
             if ((String.IsNullOrWhiteSpace(txBoxUsuario.Text)) || (String.IsNullOrWhiteSpace(txBoxSenha.Text)) || (String.IsNullOrWhiteSpace(txBoxConfSenha.Text)))
             {
                 MessageBox.Show("Para Cadastrar, TODOS CAMPOS devem ser preenchidos. Tente novamente.");
                 LimparCampos();
             }
 
-            else if (dataGridViewUsuario.Rows.Count == 2)
+            else if (dataTable.Rows.Count == 1)
             {
                 MessageBox.Show("Este nome de usuário já está em uso, tente outro.");
                 LimparUsuario();
@@ -176,16 +187,18 @@ namespace WinFormsRestaurante
                     usuario.Supervisor = 0;
                 }
 
+                txBoxUsuario.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 usuario.Login = txBoxUsuario.Text;
                 usuario.Senha = txBoxSenha.Text;
 
-                DialogResult cadastro = MessageBox.Show("Confirma a inclusão do usuário " + txBoxUsuario.Text + " ?","Alerta",MessageBoxButtons.YesNo);
+                DialogResult cadastro = MessageBox.Show("Confirma a inclusão do usuário " + usuario.Login + " ?","Alerta",MessageBoxButtons.YesNo);
                 if (cadastro == DialogResult.Yes)
                 {
-                    CadUsuario(usuario);
+                    Cadastrar(usuario);
                     MessageBox.Show("Usuario cadastrado com sucesso !");
+
                     LimparCampos();
-                    AtualizarDados();
+                    dataGridViewUsuario.DataSource = AtualizarDados();
                 }
 
                 else
@@ -193,11 +206,6 @@ namespace WinFormsRestaurante
                     LimparCampos();
                 }
             }
-        }
-
-        private void btnLimparUsuario_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
         }
 
         private void btnExcluirUsuario_Click(object sender, EventArgs e)
@@ -209,15 +217,12 @@ namespace WinFormsRestaurante
                 Usuario usuario = new Usuario();
                 usuario.Id = (Int32)dataGridViewUsuario.CurrentRow.Cells[0].Value;
                 Excluir(usuario);
+                
                 MessageBox.Show("Usuario excluído com sucesso !");
                 LimparCampos();
-                AtualizarDados();
+                dataGridViewUsuario.DataSource = AtualizarDados();
             }
         }
 
-        private void fmrUsuario_Load(object sender, EventArgs e)
-        {
-            Carregar();
-        }
     }
 }

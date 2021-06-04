@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsRestaurante
 {
-    partial class fmrLogin
+    partial class FmrLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace WinFormsRestaurante
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrLogin));
             this.picBoxPictureLogin = new System.Windows.Forms.PictureBox();
             this.txBoxUserLogin = new System.Windows.Forms.TextBox();
             this.txBoxUserPassword = new System.Windows.Forms.TextBox();

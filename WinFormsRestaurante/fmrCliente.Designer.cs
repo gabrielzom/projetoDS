@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsRestaurante
 {
-    partial class fmrCliente
+    partial class FmrCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace WinFormsRestaurante
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrCliente));
             this.grBoxCliente = new System.Windows.Forms.GroupBox();
             this.btnExcluirCliente = new System.Windows.Forms.Button();
             this.btnAlterarCliente = new System.Windows.Forms.Button();
@@ -180,7 +180,7 @@ namespace WinFormsRestaurante
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // fmrCliente
+            // FmrCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,11 +190,10 @@ namespace WinFormsRestaurante
             this.Controls.Add(this.txBoxPesquisarCliente);
             this.Controls.Add(this.dataGridViewCliente);
             this.Controls.Add(this.grBoxCliente);
-            this.Name = "fmrCliente";
+            this.Name = "FmrCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.fmrCliente_Load);
-            this.Click += new System.EventHandler(this.fmrCliente_Click);
             this.grBoxCliente.ResumeLayout(false);
             this.grBoxCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();

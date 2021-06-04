@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsRestaurante
 {
-    partial class fmrUsuario
+    partial class FmrUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace WinFormsRestaurante
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrUsuario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrUsuario));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuarioCad = new System.Windows.Forms.Label();
             this.lblSenhaCad = new System.Windows.Forms.Label();
@@ -130,13 +130,13 @@ namespace WinFormsRestaurante
             this.rdBtnSimUsuario.Name = "rdBtnSimUsuario";
             this.rdBtnSimUsuario.Size = new System.Drawing.Size(45, 19);
             this.rdBtnSimUsuario.TabIndex = 8;
-            this.rdBtnSimUsuario.TabStop = true;
             this.rdBtnSimUsuario.Text = "Sim";
             this.rdBtnSimUsuario.UseVisualStyleBackColor = true;
             // 
             // rdBtnNaoUsuario
             // 
             this.rdBtnNaoUsuario.AutoSize = true;
+            this.rdBtnNaoUsuario.Checked = true;
             this.rdBtnNaoUsuario.Location = new System.Drawing.Point(146, 232);
             this.rdBtnNaoUsuario.Name = "rdBtnNaoUsuario";
             this.rdBtnNaoUsuario.Size = new System.Drawing.Size(47, 19);
