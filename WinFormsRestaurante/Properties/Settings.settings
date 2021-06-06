@@ -5,5 +5,8 @@
     <Setting Name="connectionString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=DEVELOPMENT;Initial Catalog=EXDB;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="vs" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

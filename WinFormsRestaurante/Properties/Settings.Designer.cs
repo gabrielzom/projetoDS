@@ -31,5 +31,17 @@ namespace WinFormsRestaurante.Properties {
                 return ((string)(this["connectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string vs {
+            get {
+                return ((string)(this["vs"]));
+            }
+            set {
+                this["vs"] = value;
+            }
+        }
     }
 }

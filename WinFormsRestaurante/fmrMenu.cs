@@ -14,7 +14,6 @@ namespace WinFormsRestaurante
 {
     public partial class FmrMenu : Form
     {
-        
         public FmrMenu(String usuarioAtual, String tipoAtual)
         {
             InitializeComponent();
@@ -22,11 +21,43 @@ namespace WinFormsRestaurante
             lblTipoAtual.Text = tipoAtual;
         }
 
+        public void FormularioAberto(Form formularioAtual)
+        {
+            Boolean aberto = false;
+            foreach (Form formularioAberto in Application.OpenForms)
+            {
+                if (formularioAberto.Name == formularioAtual.Name)
+                {
+                    aberto = true;
+                    break;
+                }
+            }
+
+            if (!aberto)
+            {
+                formularioAtual.MdiParent = this;
+                formularioAtual.Show();
+            }
+        }
+
         private void toolStripCadCliente_Click(object sender, EventArgs e)
         {
             FmrCliente fmrCliente = new FmrCliente();
-            fmrCliente.MdiParent = this;
-            fmrCliente.Show();
+            FormularioAberto(fmrCliente);
+        }
+
+        private void toolStripCadUsuario_Click(object sender, EventArgs e)
+        {
+            if (lblTipoAtual.Text == "Operador")
+            {
+                MessageBox.Show("Apenas SUPERVISORES podem realizar cadastro de usuários.");
+            }
+
+            else
+            {
+                FmrUsuario fmrUsuario = new FmrUsuario();
+                FormularioAberto(fmrUsuario);
+            }
         }
 
         private void toolStripSair_Click(object sender, EventArgs e)
@@ -38,25 +69,9 @@ namespace WinFormsRestaurante
             }
         }
 
-        private void toolStripCadUsuario_Click(object sender, EventArgs e)
-        {
-            if (lblTipoAtual.Text == "Operador")
-            {
-                MessageBox.Show("Apenas SUPERVISORES podem realizar cadastro de usuários.");
-            }
-            
-            else
-            {
-                FmrUsuario fmrUsuario = new FmrUsuario();
-                fmrUsuario.MdiParent = this;
-                fmrUsuario.Show();
-            }
-        }
-
         private void toolStripLogoff_Click(object sender, EventArgs e)
         {
             FmrLogin fmrLogin = new FmrLogin();
-            
             DialogResult sair = MessageBox.Show("Deseja mesmo fazer Logoff ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sair == DialogResult.Yes)
             {
