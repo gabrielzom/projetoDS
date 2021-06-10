@@ -454,34 +454,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GABRIEL\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Gabriel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GABRIEL\\OneDrive\\Documentos\\WinFormsRestaurante\\WinFormsRestaurante\\WinFormsRestaurante.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\projetoDS\\WinFormsRestaurante\\WinFormsRestaurante.csproj",
       "projectName": "WinFormsRestaurante",
-      "projectPath": "C:\\Users\\GABRIEL\\OneDrive\\Documentos\\WinFormsRestaurante\\WinFormsRestaurante\\WinFormsRestaurante.csproj",
-      "packagesPath": "C:\\Users\\GABRIEL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GABRIEL\\OneDrive\\Documentos\\WinFormsRestaurante\\WinFormsRestaurante\\obj\\",
+      "projectPath": "C:\\Users\\Gabriel\\projetoDS\\WinFormsRestaurante\\WinFormsRestaurante.csproj",
+      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Gabriel\\projetoDS\\WinFormsRestaurante\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\GABRIEL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows7.0"
+        "net5.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -523,7 +513,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

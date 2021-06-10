@@ -42,30 +42,7 @@ namespace WinFormsRestaurante
             this.Carregar();
         }
 
-        public DataTable Carregar()
-        {
-            SqlConnection sqlConnection = new SqlConnection();
-            SqlCommand sqlCommand = new SqlCommand();
-            DataTable dataTable = new DataTable();
-
-            sqlConnection.ConnectionString = Settings.Default.connectionString;
-            sqlCommand.Connection = sqlConnection;
-            sqlCommand.CommandType = CommandType.Text;
-            sqlCommand.CommandText = "SELECT ID,USUARIO,SUPERVISOR FROM USUARIOS";
-
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            sqlDataAdapter.Fill(dataTable);
-
-            sqlConnection.Open();
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-
-            dataGridViewUsuario.DataSource = dataTable;
-
-            return dataTable;
-        }
-
-        public DataTable AtualizarDados()
+        public DataTable CarregarDados()
         {
             SqlConnection sqlConnection = new SqlConnection();
             SqlCommand sqlCommand = new SqlCommand();
@@ -143,7 +120,7 @@ namespace WinFormsRestaurante
 
         private void fmrUsuario_Load(object sender, EventArgs e)
         {
-            Carregar();
+           dataGridViewUsuario.DataSource = CarregarDados();
         }
         private void btnLimparUsuario_Click(object sender, EventArgs e)
         {
@@ -198,7 +175,7 @@ namespace WinFormsRestaurante
                     MessageBox.Show("Usuario cadastrado com sucesso !");
 
                     LimparCampos();
-                    dataGridViewUsuario.DataSource = AtualizarDados();
+                    dataGridViewUsuario.DataSource = CarregarDados();
                 }
 
                 else
@@ -220,9 +197,8 @@ namespace WinFormsRestaurante
                 
                 MessageBox.Show("Usuario excluído com sucesso !");
                 LimparCampos();
-                dataGridViewUsuario.DataSource = AtualizarDados();
+                dataGridViewUsuario.DataSource = CarregarDados();
             }
         }
-
     }
 }
