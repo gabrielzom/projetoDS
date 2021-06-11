@@ -99,3 +99,7 @@ C:\Users\GABRIEL\OneDrive\Documentos\WinFormsRestaurante\WinFormsRestaurante\obj
 C:\Users\GABRIEL\OneDrive\Documentos\WinFormsRestaurante\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.pdb
 C:\Users\GABRIEL\OneDrive\Documentos\WinFormsRestaurante\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.genruntimeconfig.cache
 C:\Users\GABRIEL\OneDrive\Documentos\WinFormsRestaurante\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.fmrUsuario.resources
+C:\Users\Gabriel\projetoDS\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.csproj.AssemblyReference.cache
+C:\Users\Gabriel\projetoDS\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.dll
+C:\Users\Gabriel\projetoDS\WinFormsRestaurante\obj\Debug\net5.0-windows\ref\WinFormsRestaurante.dll
+C:\Users\Gabriel\projetoDS\WinFormsRestaurante\obj\Debug\net5.0-windows\WinFormsRestaurante.pdb

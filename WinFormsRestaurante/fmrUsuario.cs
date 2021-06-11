@@ -120,7 +120,11 @@ namespace WinFormsRestaurante
 
         private void fmrUsuario_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             dataGridViewUsuario.DataSource = CarregarDados();
+=======
+           dataGridViewUsuario.DataSource = CarregarDados();
+>>>>>>> 7b7f1e31ffc2a85c7d0ba59f8db6ff0d0b33952c
         }
         private void btnLimparUsuario_Click(object sender, EventArgs e)
         {
@@ -199,6 +203,5 @@ namespace WinFormsRestaurante
                 dataGridViewUsuario.DataSource = CarregarDados();
             }
         }
-
     }
 }
