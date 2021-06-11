@@ -107,7 +107,7 @@ namespace WinFormsRestaurante
             this.toolStripSair});
             this.menuStripMenu.Location = new System.Drawing.Point(0, 0);
             this.menuStripMenu.Name = "menuStripMenu";
-            this.menuStripMenu.Size = new System.Drawing.Size(1379, 24);
+            this.menuStripMenu.Size = new System.Drawing.Size(1484, 24);
             this.menuStripMenu.TabIndex = 0;
             this.menuStripMenu.Text = "menuStripMenu";
             // 
@@ -500,7 +500,7 @@ namespace WinFormsRestaurante
             // lblUsuarioMenu
             // 
             this.lblUsuarioMenu.AutoSize = true;
-            this.lblUsuarioMenu.Location = new System.Drawing.Point(12, 703);
+            this.lblUsuarioMenu.Location = new System.Drawing.Point(12, 819);
             this.lblUsuarioMenu.Name = "lblUsuarioMenu";
             this.lblUsuarioMenu.Size = new System.Drawing.Size(50, 15);
             this.lblUsuarioMenu.TabIndex = 2;
@@ -509,7 +509,7 @@ namespace WinFormsRestaurante
             // lblTipoUsuarioMenu
             // 
             this.lblTipoUsuarioMenu.AutoSize = true;
-            this.lblTipoUsuarioMenu.Location = new System.Drawing.Point(145, 703);
+            this.lblTipoUsuarioMenu.Location = new System.Drawing.Point(145, 819);
             this.lblTipoUsuarioMenu.Name = "lblTipoUsuarioMenu";
             this.lblTipoUsuarioMenu.Size = new System.Drawing.Size(33, 15);
             this.lblTipoUsuarioMenu.TabIndex = 3;
@@ -519,7 +519,7 @@ namespace WinFormsRestaurante
             // 
             this.lblTipoAtual.AutoSize = true;
             this.lblTipoAtual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTipoAtual.Location = new System.Drawing.Point(175, 703);
+            this.lblTipoAtual.Location = new System.Drawing.Point(175, 819);
             this.lblTipoAtual.Name = "lblTipoAtual";
             this.lblTipoAtual.Size = new System.Drawing.Size(17, 15);
             this.lblTipoAtual.TabIndex = 4;
@@ -529,7 +529,7 @@ namespace WinFormsRestaurante
             // 
             this.lblUsuarioAtual.AutoSize = true;
             this.lblUsuarioAtual.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUsuarioAtual.Location = new System.Drawing.Point(59, 703);
+            this.lblUsuarioAtual.Location = new System.Drawing.Point(59, 819);
             this.lblUsuarioAtual.Name = "lblUsuarioAtual";
             this.lblUsuarioAtual.Size = new System.Drawing.Size(17, 15);
             this.lblUsuarioAtual.TabIndex = 5;
@@ -541,9 +541,8 @@ namespace WinFormsRestaurante
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1379, 727);
+            this.ClientSize = new System.Drawing.Size(1484, 843);
             this.ControlBox = false;
             this.Controls.Add(this.lblUsuarioAtual);
             this.Controls.Add(this.lblTipoAtual);
@@ -552,6 +551,8 @@ namespace WinFormsRestaurante
             this.Controls.Add(this.menuStripMenu);
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
+            this.MaximumSize = new System.Drawing.Size(1500, 882);
+            this.MinimumSize = new System.Drawing.Size(1500, 882);
             this.Name = "FmrMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Menu";
